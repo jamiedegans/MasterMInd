@@ -7,7 +7,7 @@ public class Mastermind
 
     public static void main(String[] args)
     {
-
+	// dit is een test voor github less
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Raad de code met de kleuren rood, blauw, groen, paars en geel.");
 	System.out.println("Als je WIT krijgt zit de pion in de kleurencode, alleen op de verkeerde plek.");
@@ -31,7 +31,7 @@ public class Mastermind
 	String codevakje2 = blauw;
 	String codevakje3 = blauw;
 	String codevakje4 = blauw;
-	
+
 	boolean hebIkGewonnen = false;
 
 	// codingpoging 1
@@ -98,7 +98,7 @@ public class Mastermind
 	    {
 		System.out.println("...");
 	    }
-             //dit na alles de laste controle het besluit
+	    // dit na alles de laste controle het besluit
 	    if (controle1 && controle2 && controle3 && controle4)
 	    {
 		i = 10;
@@ -106,13 +106,13 @@ public class Mastermind
 	    }
 
 	}
-	if (hebIkGewonnen == true) {
-	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");
-	} else 
+	if (hebIkGewonnen == true)
 	{
-	    System.out.println("l");   
+	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");
+	} else
+	{
+	    System.out.println("l");
 	}
 	sc.close();
     }
-
 }
