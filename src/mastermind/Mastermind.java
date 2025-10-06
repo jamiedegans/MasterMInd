@@ -7,7 +7,7 @@ public class Mastermind
 
     public static void main(String[] args)
     {
-	// dit is een test voor github less
+	
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Raad de code met de kleuren rood, blauw, groen, paars en geel.");
 	System.out.println("Als je WIT krijgt zit de pion in de kleurencode, alleen op de verkeerde plek.");
@@ -25,8 +25,9 @@ public class Mastermind
 	// code maker
 	String wit = "Wit";
 	String black = "Zwart";
+	
 	String niets = "niets";
-	// code from the game spell
+	// code van de game
 	String codevakje1 = blauw;
 	String codevakje2 = blauw;
 	String codevakje3 = blauw;
@@ -111,7 +112,7 @@ public class Mastermind
 	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");
 	} else
 	{
-	    System.out.println("l");
+	    System.out.println("jammer je hebt de code niet dus geen hacker LOSER");
 	}
 	sc.close();
     }
