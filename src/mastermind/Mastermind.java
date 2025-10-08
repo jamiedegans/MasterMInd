@@ -99,7 +99,9 @@ public class Mastermind
 	    {
 		System.out.println("...");
 	    }
+	    
 	    // dit na alles de laste controle het besluit
+	    
 	    if (controle1 && controle2 && controle3 && controle4)
 	    {
 		i = 10;
