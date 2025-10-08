@@ -14,7 +14,7 @@ public class Mastermind
 	System.out.println("Krijg je ZWART te zien dan staat de pion met de juiste kleur op de juiste plek.");
 	System.out.println("Indien je NIETS krijgt staat de gekozen pion niet in de kleurencode. Succes hacker!!!");
 
-	// de kleuren van het spell, Rood, Blauw, Groen, Paars, Geel, Wit, zwart
+	// de kleuren van het spell, Rood, Blauw, Groen, Paars, Geel, Wit, Zwart
 	String rood = "Rood";
 	String blauw = "Blauw";
 	String groen = "Groen";
@@ -24,18 +24,18 @@ public class Mastermind
 
 	// code maker
 	String wit = "Wit";
-	String black = "Zwart";
-	
+	String zwart = "Zwart";
 	String niets = "niets";
+	
 	// code van de game
-	String codevakje1 = blauw;
-	String codevakje2 = blauw;
-	String codevakje3 = blauw;
-	String codevakje4 = blauw;
+	String codeVakje1 = blauw;
+	String codeVakje2 = blauw;
+	String codeVakje3 = blauw;
+	String codeVakje4 = blauw;
 
 	boolean hebIkGewonnen = false;
 
-	// codingpoging 1
+	// codingpoging
 
 	for (int i = 0; i < 10; i = i + 1)
 	{
@@ -48,12 +48,12 @@ public class Mastermind
 
 	    // controle
 
-	    boolean controle1 = input1_1.equalsIgnoreCase(codevakje1);
+	    boolean controle1 = input1_1.equalsIgnoreCase(codeVakje1);
 	    if (controle1)
 	    {
-		System.out.println(black);
-	    } else if (input1_1.equalsIgnoreCase(codevakje2) || input1_1.equalsIgnoreCase(codevakje3)
-		    || input1_1.equalsIgnoreCase(codevakje4))
+		System.out.println(zwart);
+	    } else if (input1_1.equalsIgnoreCase(codeVakje2) || input1_1.equalsIgnoreCase(codeVakje3)
+		    || input1_1.equalsIgnoreCase(codeVakje4))
 	    {
 		System.out.println(wit);
 	    } else
@@ -61,12 +61,12 @@ public class Mastermind
 		System.out.println("...");
 	    }
 
-	    boolean controle2 = input1_2.equalsIgnoreCase(codevakje2);
+	    boolean controle2 = input1_2.equalsIgnoreCase(codeVakje2);
 	    if (controle2)
 	    {
-		System.out.println(black);
-	    } else if (input1_2.equalsIgnoreCase(codevakje1) || input1_2.equalsIgnoreCase(codevakje3)
-		    || input1_2.equalsIgnoreCase(codevakje4))
+		System.out.println(zwart);
+	    } else if (input1_2.equalsIgnoreCase(codeVakje1) || input1_2.equalsIgnoreCase(codeVakje3)
+		    || input1_2.equalsIgnoreCase(codeVakje4))
 	    {
 		System.out.println(wit);
 	    } else
@@ -74,12 +74,12 @@ public class Mastermind
 		System.out.println("...");
 	    }
 
-	    boolean controle3 = input1_3.equalsIgnoreCase(codevakje3);
+	    boolean controle3 = input1_3.equalsIgnoreCase(codeVakje3);
 	    if (controle3)
 	    {
-		System.out.println(black);
-	    } else if (input1_3.equalsIgnoreCase(codevakje1) || input1_3.equalsIgnoreCase(codevakje2)
-		    || input1_3.equalsIgnoreCase(codevakje4))
+		System.out.println(zwart);
+	    } else if (input1_3.equalsIgnoreCase(codeVakje1) || input1_3.equalsIgnoreCase(codeVakje2)
+		    || input1_3.equalsIgnoreCase(codeVakje4))
 	    {
 		System.out.println(wit);
 	    } else
@@ -87,12 +87,12 @@ public class Mastermind
 		System.out.println("...");
 	    }
 
-	    boolean controle4 = input1_4.equalsIgnoreCase(codevakje4);
+	    boolean controle4 = input1_4.equalsIgnoreCase(codeVakje4);
 	    if (controle4)
 	    {
-		System.out.println(black);
-	    } else if (input1_4.equalsIgnoreCase(codevakje1) || input1_4.equalsIgnoreCase(codevakje2)
-		    || input1_4.equalsIgnoreCase(codevakje3))
+		System.out.println(zwart);
+	    } else if (input1_4.equalsIgnoreCase(codeVakje1) || input1_4.equalsIgnoreCase(codeVakje2)
+		    || input1_4.equalsIgnoreCase(codeVakje3))
 	    {
 		System.out.println(wit);
 	    } else
