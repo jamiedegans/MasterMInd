@@ -25,7 +25,7 @@ public class Mastermind
 	// code maker
 	String wit = "Wit";
 	String zwart = "Zwart";
-	String niets = "niets";
+	String niets = "Niets";
 	
 	// code van de game
 	String codeVakje1 = blauw;
@@ -35,7 +35,7 @@ public class Mastermind
 
 	boolean hebIkGewonnen = false;
 	
-	// de comntrole van het spell
+	// de controle van het spell
 	  boolean controle1;
 	  boolean controle2;
 	  boolean controle3;
@@ -64,7 +64,7 @@ public class Mastermind
 		System.out.println(wit);
 	    } else
 	    {
-		System.out.println("...");
+		System.out.println(niets);
 	    }
 
 	    controle2 = input2.equalsIgnoreCase(codeVakje2);
@@ -77,7 +77,7 @@ public class Mastermind
 		System.out.println(wit);
 	    } else
 	    {
-		System.out.println("...");
+		System.out.println(niets);
 	    }
 
 	    controle3 = input3.equalsIgnoreCase(codeVakje3);
@@ -90,7 +90,7 @@ public class Mastermind
 		System.out.println(wit);
 	    } else
 	    {
-		System.out.println("...");
+		System.out.println(niets);
 	    }
 
 	    controle4 = input4.equalsIgnoreCase(codeVakje4);
@@ -103,7 +103,7 @@ public class Mastermind
 		System.out.println(wit);
 	    } else
 	    {
-		System.out.println("...");
+		System.out.println(niets);
 	    }
 	    
 	    // dit na alles de laste controle het besluit
