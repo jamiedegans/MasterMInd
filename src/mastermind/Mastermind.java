@@ -15,12 +15,12 @@ public class Mastermind
 	System.out.println("Indien je NIETS krijgt staat de gekozen pion niet in de kleurencode. Succes hacker!!!");
 
 	// de kleuren van het spell, Rood, Blauw, Groen, Paars, Geel, Wit, Zwart
-	String rood = "Rood";
-	String blauw = "Blauw";
-	String groen = "Groen";
-	String paars = "Paars";
-	String oranje = "Oranje";
-	String geel = "Geel";
+	String rood = " Rood";
+	String blauw = " Blauw ";
+	String groen = " Groen ";
+	String paars = " Paars ";
+	String oranje = " Oranje ";
+	String geel = " Geel ";
 
 	// code maker
 	String wit = "Wit";
@@ -120,7 +120,7 @@ public class Mastermind
 	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");
 	} else
 	{
-	    System.out.println("jammer je hebt de code niet dus geen hacker LOSER");
+	    System.out.println("jammer je hebt de code niet dus je bent geen hacker de code was" + codeVakje1 + codeVakje2 + codeVakje3 + codeVakje4);
 	}
 	sc.close();
     }
