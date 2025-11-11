@@ -57,7 +57,7 @@ public class Mastermind
 	    controle1 = input1.equalsIgnoreCase(codeVakje1);
 	    if (controle1)
 	    {
-		System.out.println(zwart);
+		
 	    } else if (input1.equalsIgnoreCase(codeVakje2) || input1.equalsIgnoreCase(codeVakje3)
 		    || input1.equalsIgnoreCase(codeVakje4))
 	    {
