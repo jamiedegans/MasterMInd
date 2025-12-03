@@ -1,13 +1,14 @@
 package mastermind;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Mastermind
 {
 
     public static void main(String[] args)
     {
-	
+
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Raad de code met de kleuren rood, blauw, groen, paars en geel.");
 	System.out.println("Als je WIT krijgt zit de pion in de kleurencode, alleen op de verkeerde plek.");
@@ -15,31 +16,29 @@ public class Mastermind
 	System.out.println("Indien je NIETS krijgt staat de gekozen pion niet in de kleurencode. Succes hacker!!!");
 
 	// de kleuren van het spell, Rood, Blauw, Groen, Paars, Geel, Wit, Zwart
-	String rood = " Rood";
-	String blauw = " Blauw ";
-	String groen = " Groen ";
-	String paars = " Paars ";
-	String oranje = " Oranje ";
-	String geel = " Geel ";
+
+	String[] kleuren =
+	{ "Rood", "Blauw", "Groen", "Paars", "Oranje", "Geel" };
 
 	// code maker
-	String wit = "Wit";
-	String zwart = "Zwart";
-	String niets = "Niets";
+	String[] codenMakers =
+	{ "Wit ", "Zwart", "Niets" };
+
+	// code van de game'
+	String[] codeVakjes = new String[4];
 	
-	// code van de game
-	String codeVakje1 = blauw;
-	String codeVakje2 = blauw;
-	String codeVakje3 = blauw;
-	String codeVakje4 = blauw;
+	Random rand = new Random();
+	for (int i = 0; i < codeVakjes.length; i++)
+	{
+	    codeVakjes[i] = kleuren[rand.nextInt(kleuren.length)];
+	    
+	}
 
 	boolean hebIkGewonnen = false;
-	
+
 	// de controle van het spell
-	  boolean controle1;
-	  boolean controle2;
-	  boolean controle3;
-	  boolean controle4;
+
+	boolean[] controles = new boolean[4];
 
 	// codingpoging
 
@@ -47,68 +46,47 @@ public class Mastermind
 	{
 	    System.out.println("poging " + (i + 1));
 	    System.out.println("Raad de code met de kleuren rood, blauw, groen, paars en geel.");
-	    String input1 = sc.next();
-	    String input2 = sc.next();
-	    String input3 = sc.next();
-	    String input4 = sc.next();
+
+	    String[] inputs = new String[4];
+
+	    String[] codenControles =
+	    { codenMakers[2], codenMakers[2], codenMakers[2], codenMakers[2] };
+	    for (int inputPoging = 0; inputPoging < inputs.length; inputPoging++)
+	    {
+		inputs[inputPoging] = sc.next();
+	    }
 
 	    // controle
 
-	    controle1 = input1.equalsIgnoreCase(codeVakje1);
-	    if (controle1)
+	    for (int indexLoop = 0; indexLoop < controles.length; indexLoop++)
 	    {
-		
-	    } else if (input1.equalsIgnoreCase(codeVakje2) || input1.equalsIgnoreCase(codeVakje3)
-		    || input1.equalsIgnoreCase(codeVakje4))
-	    {
-		System.out.println(wit);
-	    } else
-	    {
-		System.out.println(niets);
-	    }
 
-	    controle2 = input2.equalsIgnoreCase(codeVakje2);
-	    if (controle2)
-	    {
-		System.out.println(zwart);
-	    } else if (input2.equalsIgnoreCase(codeVakje1) || input2.equalsIgnoreCase(codeVakje3)
-		    || input2.equalsIgnoreCase(codeVakje4))
-	    {
-		System.out.println(wit);
-	    } else
-	    {
-		System.out.println(niets);
-	    }
+		controles[indexLoop] = inputs[indexLoop].equalsIgnoreCase(codeVakjes[indexLoop]);
+		if (controles[indexLoop])
+		{
+		    codenControles[indexLoop] = codenMakers[1];
 
-	    controle3 = input3.equalsIgnoreCase(codeVakje3);
-	    if (controle3)
-	    {
-		System.out.println(zwart);
-	    } else if (input3.equalsIgnoreCase(codeVakje1) || input3.equalsIgnoreCase(codeVakje2)
-		    || input3.equalsIgnoreCase(codeVakje4))
-	    {
-		System.out.println(wit);
-	    } else
-	    {
-		System.out.println(niets);
-	    }
+		} else
+		{
+		    for (int loop = 0; loop < controles.length; loop++)
+		    {
 
-	    controle4 = input4.equalsIgnoreCase(codeVakje4);
-	    if (controle4)
-	    {
-		System.out.println(zwart);
-	    } else if (input4.equalsIgnoreCase(codeVakje1) || input4.equalsIgnoreCase(codeVakje2)
-		    || input4.equalsIgnoreCase(codeVakje3))
-	    {
-		System.out.println(wit);
-	    } else
-	    {
-		System.out.println(niets);
+			if (inputs[indexLoop].equalsIgnoreCase(codeVakjes[loop]))
+			{
+			    codenControles[indexLoop] = codenMakers[0];
+			    break;
+			}
+		    }
+
+		}
 	    }
-	    
+	    for (String codenControle : codenControles)
+	    {
+		System.out.println(codenControle);
+	    }
 	    // dit na alles de laste controle het besluit
-	    
-	    if (controle1 && controle2 && controle3 && controle4)
+
+	    if (controles[0] && controles[1] && controles[2] && controles[3])
 	    {
 		i = 10;
 		hebIkGewonnen = true;
@@ -118,10 +96,13 @@ public class Mastermind
 	if (hebIkGewonnen == true)
 	{
 	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");
-	} else
-	{
-	    System.out.println("jammer je hebt de code niet dus je bent geen hacker de code was" + codeVakje1 + codeVakje2 + codeVakje3 + codeVakje4);
+	} else {
+	    System.out.println("jammer je hebt de code niet dus je bent geen hacker de code was");
+	     for (String codeVakje : codeVakjes)
+		{
+		    System.out.println(codeVakje);
+		}
+		
 	}
 	sc.close();
-    }
-}
+    }}
