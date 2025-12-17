@@ -10,19 +10,16 @@ public class Mastermind
     {
 	Scanner sc = new Scanner(System.in);
 	Helper helper = new Helper();
-	
-	
-	for (String uitleg: helper.laatDeUitlegZien()) {System.out.println(uitleg);
-	}
-	
-	// de kleuren van het spell, Rood, Blauw, Groen, Paars, Geel, Wit, Zwart
 
+	for (String uitleg : helper.laatDeUitlegZien())
+	{
+	    System.out.println(uitleg);
+	}
+	// de kleuren van het spell, Rood, Blauw, Groen, Paars, Geel, Wit, Zwart
 	// code maker
 	String[] codenMakers =
 	{ "Wit ", "Zwart", "Niets" };
 	// code van de game'
-	
-	
 	boolean hebIkGewonnen = false;
 	// de controle van het spell
 	boolean[] controles = new boolean[4];
@@ -42,40 +39,9 @@ public class Mastermind
 	    System.out.println("poging " + (i + 1));
 	    System.out.println("Raad de code met de kleuren rood, blauw, groen, paars en geel.");
 
-	    String[] inputs = new String[4];
-
-	    String[] codenControles =
-	    { codenMakers[2], codenMakers[2], codenMakers[2], codenMakers[2] };
-
-	    for (int inputPoging = 0; inputPoging < inputs.length; inputPoging++)
-	    {
-		inputs[inputPoging] = sc.next();
-	    }
-	    // controle
-	    for (int indexLoop = 0; indexLoop < controles.length; indexLoop++)
-	    {
-
-		controles[indexLoop] = inputs[indexLoop].equalsIgnoreCase(codeVakjes[indexLoop]);
-		if (controles[indexLoop])
-		{
-		    codenControles[indexLoop] = codenMakers[1];
-
-		} else
-		{
-		    for (int loop = 0; loop < controles.length; loop++)
-		    {
-
-			if (inputs[indexLoop].equalsIgnoreCase(codeVakjes[loop]))
-			{
-			    codenControles[indexLoop] = codenMakers[0];
-			    break;
-			}
-		    }
-
-		}
-	    }
-
-	    for (String codenControle : codenControles)
+	    helper.deInput();	    	
+	    	
+	    for (String codenControle : helper.deControle())
 	    {
 		System.out.println(codenControle);
 	    }
