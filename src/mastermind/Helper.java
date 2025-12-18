@@ -16,9 +16,6 @@ public class Helper
     String[] codenMakers =
     { "Wit ", "Zwart", "Niets" };
 
-    String[] codenControles =
-    { codenMakers[2], codenMakers[2], codenMakers[2], codenMakers[2] };
-
     String[] codeVakjes = new String[4];
 
     boolean[] controles = new boolean[4];
@@ -61,7 +58,8 @@ public class Helper
 
     public String[] deControle()
     {
-
+	String[] codenControles =
+	{ codenMakers[2], codenMakers[2], codenMakers[2], codenMakers[2] };
 	for (int indexLoop = 0; indexLoop < controles.length; indexLoop++)
 	{
 
