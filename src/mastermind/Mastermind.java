@@ -58,12 +58,13 @@ public class Mastermind
 	    }
 	    // dit na alles de laste controle het besluit
 
-	    if (controles[0] && controles[1] && controles[2] && controles[3])
-	    {
-		i = 10;
-		hebIkGewonnen = true;
-	    }
-	}
+	    if (helper.isCodeGuessed())
+            {
+                hebIkGewonnen = true;
+               break; // Stop de loop direct
+            }
+        }
+	
 	if (hebIkGewonnen == true)
 	{
 	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");

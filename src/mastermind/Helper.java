@@ -85,4 +85,10 @@ public class Helper
 	return codenControles;
 
     }
+    
+    public boolean isCodeGuessed()
+    {
+        return controles[0] && controles[1] && controles[2] && controles[3];
+    }
+    
 }
