@@ -21,8 +21,9 @@ public class Helper
     boolean[] controles = new boolean[4];
 
     String[] inputs = new String[4];
+   
 
-    // -----------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------
 
     public String[] laatDeUitlegZien()
     {
@@ -56,6 +57,21 @@ public class Helper
 
     }
 
+    //-----------------
+    public boolean isKleurInHetSpel() {
+
+	    for (String input : inputs) {
+	        for (String kleur : kleuren) {
+	            if (input.equalsIgnoreCase(kleur)) {
+	                return true;   // kleur 
+	            }
+	        }
+	    }
+	    return false;  // geen kleuren
+	}
+
+    // -----------------------
+
     public String[] deControle()
     {
 	String[] codenControles =
@@ -85,10 +101,10 @@ public class Helper
 	return codenControles;
 
     }
-    
+
     public boolean isCodeGuessed()
     {
-        return controles[0] && controles[1] && controles[2] && controles[3];
+	return controles[0] && controles[1] && controles[2] && controles[3];
     }
-    
+
 }

@@ -1,8 +1,7 @@
 package mastermind;
 
-import java.util.Scanner;
-import java.util.InputMismatchException;
-import java.util.Random;
+import java.util.*;
+import mastermind.Helper;
 
 public class Mastermind
 {
@@ -24,9 +23,14 @@ public class Mastermind
 	boolean hebIkGewonnen = false;
 	// de controle van het spell
 	boolean[] controles = new boolean[4];
+	//
+
+	//
+
 	// codingpoging
 
 	String[] codeVakjes = helper.kleurenCodeMaken();
+
 	boolean debug = false;
 	try
 	{
@@ -35,7 +39,7 @@ public class Mastermind
 	{
 	    System.out.println("verkeerde input debug staat uit");
 	}
-	
+
 	if (debug)
 	{
 	    System.out.println("de code is ");
@@ -49,8 +53,18 @@ public class Mastermind
 	{
 	    System.out.println("poging " + (i + 1));
 	    System.out.println("Raad de code met de kleuren rood, blauw, groen, paars en geel.");
+	    boolean resultaat = false;
+	    do
+	    {
+		helper.deInput();
+		resultaat = helper.isKleurInHetSpel();
+		if (resultaat == false)
+		{
+		    System.out.println("“die kleur zit niet in het spel probeer het opnieuw”");
+		}
+	    } while (resultaat == false);
 
-	    helper.deInput();
+	    
 
 	    for (String codenControle : helper.deControle())
 	    {
@@ -59,18 +73,19 @@ public class Mastermind
 	    // dit na alles de laste controle het besluit
 
 	    if (helper.isCodeGuessed())
-            {
-                hebIkGewonnen = true;
-               break; // Stop de loop direct
-            }
-        }
-	
+	    {
+		hebIkGewonnen = true;
+		break;
+	    }
+	}
+
 	if (hebIkGewonnen == true)
 	{
 	    System.out.println("je hebt de code gehackt hacker. Jij bent de winnar");
 	} else
 	{
 	    System.out.println("jammer je hebt de code niet dus je bent geen hacker de code was");
+
 	    for (String codeVakje : helper.codeVakjes)
 	    {
 		System.out.println(codeVakje);
